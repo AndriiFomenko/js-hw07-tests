@@ -1,4 +1,4 @@
-import { sumArray } from '../main'
+import { sumArray } from '../main.js'
 
 describe('sumArray', () => {
   test('sum of elements in an array of numbers', () => {

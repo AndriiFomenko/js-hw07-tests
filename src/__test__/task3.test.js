@@ -1,4 +1,4 @@
-import { SkillsManager } from '../main'
+import { SkillsManager } from '../main.js'
 
 describe('SkillsManager', () => {
   let skillsManager

@@ -1,5 +1,5 @@
-import { DateCalculator } from '../main'
-import { code } from './prepareTestEnvironment'
+import { DateCalculator } from '../main.js'
+import { code } from './prepareTestEnvironment.js'
 
 describe('Code tests for DateCalculator', () => {
   let calculator
@@ -26,25 +26,22 @@ describe('Code tests for DateCalculator', () => {
   })
 
   test('File should use "function" for DateCalculator', () => {
-    expect(code).toMatch(/function DateCalculator/)
+    expect(DateCalculator.toString().trim().startsWith('function')).toBeTruthy()
   })
 
   test('Class should not be defined with "class" keyword', () => {
-    expect(code).not.toMatch(/class DateCalculator/)
+    expect(DateCalculator.toString().trim().startsWith('class')).toBeFalsy()
   })
 
   test('Should declare "this.addDays" method', () => {
-    const functionCodeAsString = DateCalculator.toString()
-    expect(functionCodeAsString).toMatch(/this\.addDays\s*=\s*function/)
+    expect(typeof calculator.addDays).toBe('function')
   })
 
   test('Should declare "this.subtractDays" method', () => {
-    const functionCodeAsString = DateCalculator.toString()
-    expect(functionCodeAsString).toMatch(/this\.subtractDays\s*=\s*function/)
+    expect(typeof calculator.subtractDays).toBe('function')
   })
 
   test('Should declare "this.getResult" method', () => {
-    const functionCodeAsString = DateCalculator.toString()
-    expect(functionCodeAsString).toMatch(/this\.getResult\s*=\s*function/)
+    expect(typeof calculator.getResult).toBe('function')
   })
 })

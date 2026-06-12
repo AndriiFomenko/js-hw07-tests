@@ -1,4 +1,4 @@
-import { doubleArrayElements } from '../main'
+import { doubleArrayElements } from '../main.js'
 
 describe('doubleArrayElements', () => {
   test('doubling elements of an array of numbers', () => {
